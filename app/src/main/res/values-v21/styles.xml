@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">?android:attr/textColorPrimaryNoDisable</item>
+    </style>
+    <style name="algoPack" parent="Theme.AppCompat.Light.NoActionBar" >
+
+        <item name="colorPrimaryDark">#C6FF00</item>
+    </style>
+    <style name="algoPack1" parent="Theme.AppCompat.Light.NoActionBar" >
+
+        <item name="colorPrimaryDark">#10100f</item>
+    </style>
+</resources>

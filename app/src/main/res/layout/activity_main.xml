@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lime_A400"
+    tools:context="com.jarvis.scibots.SenPaper.MainActivity">
+
+    <TextView
+        android:id="@+id/CaptureButton"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Start"
+        android:textSize="48dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:text="Android Experiment" />
+
+    <!--<Button-->
+        <!--android:id="@+id/EndCapture"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:onClick="EndCaptureSenses"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignStart="@+id/CaptureButton"-->
+        <!--android:layout_below="@+id/CaptureButton"-->
+        <!--android:layout_marginTop="33dp"-->
+        <!--android:text="End" />-->
+
+</RelativeLayout>

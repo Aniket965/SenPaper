@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/wallpaperlayout"
+    tools:context="com.jarvis.scibots.SenPaper.Wallpaper">
+
+<com.jarvis.scibots.SenPaper.WallpaperCreationView
+    android:id="@+id/ViewMaster"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Regenerate"
+        android:textColor="@color/white"
+        android:onClick="goback"
+        android:textSize="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
