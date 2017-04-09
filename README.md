@@ -14,3 +14,5 @@ this is android Experiment that Generates the Material Wallpapers by use of Sens
  > hold start for as much time as much shapes you want  and move your phone  in funny manner  then release, app will generate the Wallpaper with help of the Recorded values that are Recorded in that holding time and will automatically save Wallpaper to storage .
  
  
+## what next ?
+> well if making wallpaper from sensors can give us fun , then breaking them may also give enjoyment ,it will be interesting if wallpaper is can make a story and people can read wallpaper and break stories from them. 
