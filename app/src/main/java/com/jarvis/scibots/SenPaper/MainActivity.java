@@ -65,12 +65,22 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         final Typeface Pacifico= Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
         androidExperiment.setTypeface(Pacifico);
         capture.setTypeface(Pacifico);
+        /**
+        * Checks and ask for the storage permission so that image can be saved in storage
+        */
         isStoragePermissionGranted();
+        
+        /* 
+        * Listens to the start button pressed and release 
+        */
         capture.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     lastDown = System.currentTimeMillis();
+                    /*
+                    * Activates the sensors when button is press down
+                    */
                     mSensorManager.registerListener(MainActivity.this,mMagnetic,SensorManager.SENSOR_DELAY_NORMAL);
                     mSensorManager.registerListener(MainActivity.this,mAccelerations,SensorManager.SENSOR_DELAY_NORMAL);
                     mSensorManager.registerListener(MainActivity.this,mLight,SensorManager.SENSOR_DELAY_NORMAL);
@@ -80,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    /*
+                    * Finds the time interval for which button is presssed & 
+                    * unregister the sensors 
+                    */
                     keyPressedDuration = System.currentTimeMillis() - lastDown;
                     captureTime = keyPressedDuration/1000;
                     Log.d(TAG,captureTime+"");
@@ -97,7 +111,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-
+        /*
+        * Arraylists for storing respective data from sensors 
+        */
         LightValue =  new ArrayList<>();
         MagneticValues = new ArrayList<>();
         AccelerationValuesX = new ArrayList<>();
@@ -106,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
         mSensorManager = (SensorManager) getSystemService(MainActivity.this.SENSOR_SERVICE);
+        /*
+        * sets default sensors for device
+        */
         mMagnetic = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -118,17 +137,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-//     /*Captures the senses while the capturing mode is on*/
-//    public void captureSenses(View view){
-//        captureTime = SystemClock.uptimeMillis()/1000;
-//
-//        mSensorManager.registerListener(this,mMagnetic,SensorManager.SENSOR_DELAY_NORMAL);
-//        mSensorManager.registerListener(this,mAccelerations,SensorManager.SENSOR_DELAY_NORMAL);
-//        mSensorManager.registerListener(this,mLight,SensorManager.SENSOR_DELAY_NORMAL);
-//        mSensorManager.registerListener(this,mProximity,SensorManager.SENSOR_DELAY_NORMAL);
-//
-//    }
 
+/*
+* Manipulates the data recivied from the sensors and sends to wallpaper activity
+*/
 
     private void ManipulateValues(ArrayList<Float> accelerationValuesX,
                                   ArrayList<Float> accelerationValuesY,
