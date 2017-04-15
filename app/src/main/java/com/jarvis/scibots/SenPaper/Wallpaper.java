@@ -45,7 +45,9 @@ public class Wallpaper extends AppCompatActivity {
 
 
         regen.setTypeface(Pacifico);
-
+        /*
+        * gets data from bundle
+        */
         Intent intent3 = getIntent();
         Bundle b = intent3.getExtras();
         int BackgroundValue = b.getInt("BackgroundIndex");
@@ -54,6 +56,10 @@ public class Wallpaper extends AppCompatActivity {
         MagicNumber = b.getInt("magicColor");
         postionsX = b.getIntegerArrayList("XCordinates");
         postionsY = b.getIntegerArrayList("YCordinates");
+        /*
+        * Finds Random shapes ratio
+        */
+        
         Random r = new Random();
         NORectangles = r.nextInt(shapesCount);
         NOTriangles = r.nextInt(Math.abs(shapesCount - NORectangles ) );
@@ -65,7 +71,6 @@ public class Wallpaper extends AppCompatActivity {
         wView.setValues(postionsX,postionsY,Depth,SelectedColors,MagicNumber,NORectangles,NOTriangles,NOCircles,getResources().getColor(DarkBackgrounds.get(BackgroundValue)));
 
 
-//          Log.d("Postions " , postionsX + "");
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.wallpaperlayout);
         relativeLayout.setBackgroundColor(getResources().getColor(DarkBackgrounds.get(BackgroundValue)));
 
@@ -82,7 +87,9 @@ public class Wallpaper extends AppCompatActivity {
         Random r = new Random();
         int  ColorVariance = r.nextInt(255 - 0) + 0;
         int index;
-
+        /*
+        * 255 is the last index of the colors from material colors
+        */
         if(MagicColor > 255 ){
             SelectedColors[0] = Color.parseColor(allColors[125]);
 
@@ -112,7 +119,8 @@ public class Wallpaper extends AppCompatActivity {
 
      /*fixes the Background colors for the
      * Background of the view
-     * */
+     * 
+     */
     private void setupBackgrounds() {
         DarkBackgrounds.add(R.color.white);
         DarkBackgrounds.add(R.color.amber_900);
@@ -135,7 +143,9 @@ public class Wallpaper extends AppCompatActivity {
         DarkBackgrounds.add(R.color.grey_900);
     }
 
-
+   /*
+   * Go back to main screen when regenrate is pressed
+   */
     public void goback(View view) {
     Intent intent = new Intent(Wallpaper.this,MainActivity.class);
         startActivity(intent);
